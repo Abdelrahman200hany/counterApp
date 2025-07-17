@@ -31,14 +31,14 @@ class _HomeviewState extends State<Homeview> {
                   Text(
                     'Liver bool',
                     style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 25,
                         fontWeight: FontWeight.w600,
                         color: Colors.black),
                   ),
                   Text(
                     'Man City',
                     style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 25,
                         fontWeight: FontWeight.w600,
                         color: Colors.black),
                   ),

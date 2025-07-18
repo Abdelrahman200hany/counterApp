@@ -5,6 +5,12 @@ class PointerIncrementCuibt extends Cubit<PointerIncrementState> {
   PointerIncrementCuibt() : super(PointerIntiStata());
   int liverbool = 0;
   int mancity = 0;
+  void reset() {
+    liverbool = 0;
+    mancity = 0;
+    emit(ResetState());
+  }
+
   void increment({required String club, required int counter}) {
     if (club == 'Liverbool') {
       liverbool += counter;

@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:counter/views/homeview.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Splashview extends StatefulWidget {
   const Splashview({super.key});
@@ -12,9 +13,9 @@ class Splashview extends StatefulWidget {
 class _SplashviewState extends State<Splashview> {
   @override
   void initState() {
-    Future.delayed(const Duration (seconds: 5), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) =>const  Homeview()));
+          context, MaterialPageRoute(builder: (context) => const Homeview()));
     });
     super.initState();
   }
@@ -24,27 +25,7 @@ class _SplashviewState extends State<Splashview> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ZoomIn(
-              child: Image.asset('assets/photo/pointer.png'),
-              duration: const Duration(seconds: 4),
-            ),
-         const   SizedBox(
-              height: 16,
-            ),
-         const    Text(
-              'Counter App ',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 32,
-                fontWeight: FontWeight.w600,
-                fontFamily: '',
-              ),
-            )
-          ],
-        ),
+        child: Lottie.asset('assets/lottie/counter.json'),
       ),
     );
   }

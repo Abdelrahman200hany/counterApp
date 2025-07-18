@@ -3,15 +3,20 @@ import 'package:counter/cores/cubit/pointer_increament/pointer_increment_state.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PoniterTotalResult extends StatelessWidget {
+class PoniterTotalResult extends StatefulWidget {
   const PoniterTotalResult({
     super.key,
   });
 
   @override
+  State<PoniterTotalResult> createState() => _PoniterTotalResultState();
+}
+
+class _PoniterTotalResultState extends State<PoniterTotalResult> {
+  int liverbool = 0;
+  int mancity = 0;
+  @override
   Widget build(BuildContext context) {
-    int liverbool = 0;
-    int mancity = 0;
     return BlocConsumer<PointerIncrementCuibt, PointerIncrementState>(
       listener: (context, state) {
         if (state is PointerStateLiverBool) {

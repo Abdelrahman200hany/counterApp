@@ -3,32 +3,18 @@ import 'package:counter/cores/cubit/pointer_increament/pointer_increment_state.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PoniterTotalResult extends StatefulWidget {
+class PoniterTotalResult extends StatelessWidget {
   const PoniterTotalResult({
     super.key,
   });
 
   @override
-  State<PoniterTotalResult> createState() => _PoniterTotalResultState();
-}
-
-class _PoniterTotalResultState extends State<PoniterTotalResult> {
-  int liverbool = 0;
-  int mancity = 0;
-  @override
   Widget build(BuildContext context) {
-    return BlocConsumer<PointerIncrementCuibt, PointerIncrementState>(
-      listener: (context, state) {
-        if (state is PointerStateLiverBool) {
-          liverbool = BlocProvider.of<PointerIncrementCuibt>(context).liverbool;
-        } else if (state is PointerStateMancity) {
-          mancity = BlocProvider.of<PointerIncrementCuibt>(context).mancity;
-        } else if (state is ResetState) {
-          liverbool = BlocProvider.of<PointerIncrementCuibt>(context).liverbool;
-          mancity = BlocProvider.of<PointerIncrementCuibt>(context).liverbool;
-        }
-      },
+    return BlocBuilder<PointerIncrementCuibt, PointerIncrementState>(
       builder: (context, state) {
+        int liverbool =
+            BlocProvider.of<PointerIncrementCuibt>(context).liverbool;
+        int mancity = BlocProvider.of<PointerIncrementCuibt>(context).mancity;
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
